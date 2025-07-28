@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rakiverse Real Estate</title>
+  
+  <!-- Force HTTPS -->
+  <script>
+    if (location.protocol !== 'https:') {
+      location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+    }
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fefefe;
+      color: #222;
+      scroll-behavior: smooth;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #003344;
+      color: white;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin-right: 15px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      height: 50vh;
+      background: url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .hero .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 50px;
+      border-radius: 10px;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+    }
+
+    .section {
+      padding: 60px 20px;
+      background: white;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .feature {
+      flex: 1;
+      min-width: 280px;
+      max-width: 300px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .feature:hover {
+      transform: scale(1.05);
+    }
+
+    .feature img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    .contact a {
+      color: #003344;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #003344;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      margin-top: 20px;
+    }
+
+    /* Animations */
+    .fade-in-down {
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .slide-in {
+      animation: slideIn 1s ease-out;
+    }
+
+    .zoom-in {
+      animation: zoomIn 1s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 1.7rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      nav a {
+        display: inline-block;
+        margin-bottom: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="fade-in-down">
+    <div class="container">
+      <h1>Rakiverse Real Estate</h1>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero slide-in">
+    <div class="overlay">
+      <h2 class="hero-title">Find Your Dream Home</h2>
+      <p>Modern | Spacious | Luxurious</p>
+    </div>
+  </section>
+
+  <section id="features" class="section fade-in-up">
+    <div class="container">
+      <h2>Property Highlights</h2>
+      <div class="features">
+        <div class="feature">
+          <img src="https://images.pexels.com/photos/206172/pexels-photo-206172.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Interiors">
+          <h3>Elegant Interiors</h3>
+          <p>Spacious layouts with modern designs and natural lighting.</p>
+        </div>
+        <div class="feature">
+          <img src="https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kitchen">
+          <h3>Modern Kitchens</h3>
+          <p>Fully furnished kitchens with sleek cabinetry and appliances.</p>
+        </div>
+        <div class="feature">
+          <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Garden">
+          <h3>Private Gardens</h3>
+          <p>Peaceful green spaces and beautifully landscaped outdoors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section gallery zoom-in">
+    <div class="container">
+      <h2>Property Gallery</h2>
+      <div class="gallery-grid">
+        <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Exterior 1">
+        <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Bedroom">
+        <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Pool">
+        <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Living Room">
+        <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Balcony">
+        <img src="https://spacecreater.com/admin/assets/category/Full%20Home%20Interior.png" alt="Full Home Interior">
+        <img src="https://bonito.in/wp-content/uploads/2023/02/intro-2.jpg" alt="Dining Room">
+        <img src="https://media.istockphoto.com/id/1449681059/photo/modern-bathroom.jpg?s=612x612&w=0&k=20&c=BOkweE7hIewYpjurJI84M6x_wBugeiul3tXCSe8Teqo=" alt="Bathroom">
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section fade-in-up">
+    <div class="container">
+      <h2>About Rakiverse</h2>
+      <p>Rakiverse Real Estate has been helping families and individuals find their perfect home in Texas. We provide honest, professional service with a personal touch. Our properties range from modern apartments to luxury villas.</p>
+      <p>We focus on quality, design, and customer satisfaction. Our dedicated agents are ready to guide you through every step of the home buying journey.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact slide-in">
+    <div class="container" style="background: linear-gradient(135deg, #e0f7fa, #ffffff); padding: 50px 30px; border-radius: 12px; box-shadow: 0 0 30px rgba(0,0,0,0.1); max-width: 1000px; margin: auto;">
+      <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 30px; color: #003344;">Contact Us</h2>
+      <div style="display: flex; flex-direction: column; gap: 20px; font-size: 1.2rem;">
+        <p><strong>📍 Address:</strong> 2221 Stella St Apt 1, Denton, TX 76201</p>
+        <p><strong>📞 Phone:</strong> <a href="tel:+19544696413" style="color: #006064; text-decoration: underline;">954-469-6413</a></p>
+        <p><strong>📧 Email:</strong> <a href="mailto:services@rakiverse.com" style="color: #006064; text-decoration: underline;">services@rakiverse.com</a></p>
+      </div>
+      <div style="margin-top: 30px; text-align: center;">
+        <p style="color: #444;">Available 7 days a week. We’re here to help you find your next dream home!</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      &copy; 2025 Rakiverse Real Estate. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
